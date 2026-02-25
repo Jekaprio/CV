@@ -167,7 +167,7 @@
 <div id="main-content" class="fade-in">
     <header>
         <div>
-            <img src="https://i.ibb.co/bgdfcghR/photo-2025-10-04-16-38-56.jpg" alt="Yevhenii Shablia" class="profile-img">
+            <img src="https://i.ibb.co/bgdfcghR/photo-2025-10-04-16-38-56.jpg" alt="Yevhenii Shablia" class="profile-img" id="secret-trigger">
             <h1>Yevhenii Shablia</h1>
             <p id="header-sub" style="font-size: 1.3rem; opacity: 0.9; font-weight: 300;">⚡ Energisk og mødestabil køkkenmedhjælper</p>
             <div style="margin-top: 2rem;">
@@ -417,5 +417,39 @@
     window.onload = () => setLanguage('da');
 </script>
 
+    <script>
+    const trigger = document.getElementById('secret-trigger');
+    const SECRET_PIN = "741521"; 
+    let timer;
+
+    const startPress = (e) => {
+        // Запобігаємо відкриттю контекстного меню на телефонах
+        timer = setTimeout(() => {
+            const userPin = prompt("Введіть ПІН-код для доступу до документів:");
+            
+            if (userPin === SECRET_PIN) {
+                const link = document.createElement('a');
+                link.href = 'Ansogning_Yevhenii.pdf'; // Файл на вашому GitHub
+                link.download = 'Ansogning_Yevhenii_Shablia.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else if (userPin !== null) {
+                alert("Невірний код. Доступ заборонено.");
+            }
+        }, 5000); // 5 секунд
+    };
+
+    const endPress = () => clearTimeout(timer);
+
+    // Підтримка мобільних пристроїв та ПК
+    trigger.addEventListener('touchstart', startPress);
+    trigger.addEventListener('touchend', endPress);
+    trigger.addEventListener('mousedown', startPress);
+    trigger.addEventListener('mouseup', endPress);
+    trigger.addEventListener('mouseleave', endPress);
+</script>
+
 </body>
+
 </html>
