@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yevhenii Shablia | CV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1a2a6c;
+            --secondary: #b21f1f;
+            --accent: #fdbb2d;
+            --bg: #f8f9fa;
+            --text: #2d3436;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Кнопки перемикання мов */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--white);
+            padding: 8px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* --- АНІМАЦІЯ ПЕРЕКЛЮЧЕННЯ --- */
+        #main-content {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 5rem 1rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 170px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .container { max-width: 900px; margin: -40px auto 3rem; padding: 0 1rem; }
+
+        section {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        h2 { color: var(--primary); font-size: 1.8rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 12px; }
+
+        .experience-item { border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 2rem; }
+
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag { 
+            background: #edf2f7; 
+            padding: 0.6rem 1.2rem; 
+            border-radius: 25px; 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+            color: var(--primary); 
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .flag-icon {
+            width: 20px;
+            height: 15px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            margin-top: 1rem;
+        }
+
+        footer { text-align: center; padding: 3rem; color: #a0aec0; font-weight: 500; }
+    </style>
+</head>
+<body>
+
+<div class="lang-switch">
+    <button id="btn-da" class="lang-btn active" onclick="setLanguage('da')">
+        <img src="https://flagcdn.com/w40/dk.png" class="flag-icon" alt="DA"> DA
+    </button>
+    <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">
+        <img src="https://flagcdn.com/w40/gb.png" class="flag-icon" alt="EN"> EN
+    </button>
+</div>
+
+<div id="main-content" class="fade-in">
+    <header>
+        <div>
+            <img src="https://i.ibb.co/bgdfcghR/photo-2025-10-04-16-38-56.jpg" alt="Yevhenii Shablia" class="profile-img">
+            <h1>Yevhenii Shablia</h1>
+            <p id="header-sub" style="font-size: 1.3rem; opacity: 0.9; font-weight: 300;">⚡ Energisk og mødestabil køkkenmedhjælper</p>
+            <div style="margin-top: 2rem;">
+                <a href="https://linkedin.com/in/jekaprio" target="_blank" style="color:white; margin:0 15px; font-size:1.8rem;"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:vdfvfvsvx@gmail.com" style="color:white; margin:0 15px; font-size:1.8rem;"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+4555262232" style="color:white; margin:0 15px; font-size:1.8rem;"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2 id="title-profile">👤 Professionel Profil</h2>
+            <p id="desc-profile">
+                Jeg er en ansvarsbevidst person med en stærk arbejdsmoral og praktisk handlekraft. 
+                Min erfaring fra <strong>U/NORD Kursuscenter i Helsinge</strong> har lært mig at arbejde effektivt under pres, optimere arbejdsgange og opretholde de højeste standarder for fødevaresikkerhed og hygiejne. 
+                Jeg er yderst mødestabil, proaktiv og trives i et travlt køkkenmiljø.
+            </p>
+        </section>
+
+        <section style="border: 2px solid var(--accent); background: #fffcf5;">
+            <h2 id="title-avail">📅 Tilgængelighed & Lokation</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+                <div style="background: white; padding: 15px; border-radius: 10px;">
+                    <p><strong id="label-time">⏰ Arbejdstid:</strong></p>
+                    <p id="val-time">Klar til morgen-, dag- og weekendvagter. Meget fleksibel.</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 10px;">
+                    <p><strong id="label-loc">📍 Lokalitet:</strong></p>
+                    <p id="val-loc">Østergade 60B, 3200 Helsinge.</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 10px;">
+                    <p><strong id="label-trans">🚗 Transport:</strong></p>
+                    <p id="val-trans">Har kørekort (Kategori B).</p>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2232.046182180345!2d12.1963!3d56.0215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465241e3d6e5a55d%3A0x6b7b7b7b7b7b7b7b!2s%C3%98stergade%2060B%2C%203200%20Helsinge%2C%20Denmark!5e0!3m2!1sen!2sdk!4v1708872000000!5m2!1sen!2sdk" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="title-exp">💼 Erhverвserfaring</h2>
+            <div class="experience-item">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+                    <h3 id="job-title">👨‍🍳 Køkkenmedhjælper & Opvasker</h3>
+                    <span id="job-date" style="color: var(--secondary); font-weight: 700;">Nov 2025 – Nu</span>
+                </div>
+                <p style="font-weight: 600; color: #666; margin-bottom: 10px;">🏫 U/NORD Kursuscenter, Hillerød</p>
+                <ul id="job-list" style="margin-left: 1.5rem;">
+                    <li>🥗 Præcis klargøring og anretning af råvarer (koldt/varmt køkken).</li>
+                    <li>🧼 Betjening af industrielt opvaskeudstyr og flow-optimering.</li>
+                    <li>✨ Overholdelse af HACCP-principper for høj hygiejne.</li>
+                    <li>📦 Struktureret lagerstyring og organisering af arbejdsstationer.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="title-edu">🎓 Uddannelse</h2>
+            <div class="experience-item">
+                <p id="edu-1"><strong>💻 Softwareudvikler (Erhvervsuddannelse)</strong> (2018 - 2022)</p>
+                <p>🏫 PPFC NTU "KhPI"</p>
+            </div>
+            <div class="experience-item">
+                <p id="edu-3"><strong>⚙️ Bachelorgrad, Maskinteknik</strong> (2022 - 2025)</p>
+                <p>🏫 National Technical University "Kharkiv Polytechnic Institute"</p>
+            </div>
+            <div class="experience-item">
+                <p id="edu-2"><strong>🛠️ Kandidatgrad, Maskinteknik</strong> (2025 - Nu)</p>
+                <p>🏫 National Technical University "Kharkiv Polytechnic Institute"</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="title-skills">🔧 Kerнеkompetencer</h2>
+            <div class="tags" id="skills-list"></div>
+        </section>
+
+        <section>
+            <h2 id="title-langs">🌐 Sprog</h2>
+            <div class="tags" id="langs-list"></div>
+        </section>
+
+        <section style="text-align: center;">
+            <h2 id="title-contact">✉️ Kontakt mig</h2>
+            <a href="tel:+4555262232" class="btn-download" style="background: #27ae60; margin-right: 15px;">
+                <i class="fas fa-phone"></i> <span id="btn-call">Ring op</span>
+            </a>
+            <a id="download-link" href="CV_Yevhenii_DA.pdf" download class="btn-download">
+                <i class="fas fa-file-pdf"></i> <span id="btn-pdf">Hent CV (PDF)</span>
+            </a>
+        </section>
+
+    </div>
+</div>
+
+<footer id="footer-text">
+    © 2026 Yevhenii Shablia. Baseret på Østergade 60B, Helsinge.
+</footer>
+
+<script>
+    const translations = {
+        da: {
+            headerSub: "⚡ Energisk og mødestabil køkkenmedhjælper",
+            titleProfile: "👤 Professionel Profil",
+            descProfile: "Jeg er en ansvarsbevidst person med en stærk arbejdsmoral og praktisk handlekraft. Min erfaring fra U/NORD Kursuscenter i Hillerød har lært mig at arbejde effektivt under pres, optimere arbejdsgange og opretholde de højeste standarder for fødevaresikkerhed og hygiejne. Jeg er yderst mødestabil, proaktiv og trives i et travlt køkkenmiljø.",
+            titleAvail: "📅 Tilgængelighed & Lokation",
+            labelTime: "⏰ Arbejdstid:",
+            valTime: "Klar til morgen-, dag- og weekendvagter. Meget fleksibel.",
+            labelLoc: "📍 Lokalitet:",
+            valLoc: "Østergade 60B, 3200 Helsinge.",
+            labelTrans: "🚗 Transport:",
+            valTrans: "Har kørekort (Kategori B).",
+            titleExp: "💼 Erhvervserfaring",
+            jobTitle: "👨‍🍳 Køkkenmedhjælper & Opvasker",
+            jobDate: "Nov 2025 – Nu",
+            jobList: `<li>🥗 Præcis klargøring og anretning af råvarer (koldt/varmt køkken).</li>
+                      <li>🧼 Betjening af industrielt opvaskeudstyr og flow-optimering.</li>
+                      <li>✨ Overholdelse af HACCP-principper for høj hygiejne.</li>
+                      <li>📦 Struktureret lagerstyring og organisering af arbejdsstationer.</li>`,
+            titleEdu: "🎓 Uddannelse",
+            edu1: "<strong>💻 Softwareudvikler (Erhvervsuddannelse)</strong> (2018 - 2022)",
+            edu3: "<strong>⚙️ Bachelorgrad, Maskinteknik</strong> (2022 - 2025)",
+            edu2: "<strong>🛠️ Kandidatgrad, Maskinteknik</strong> (2025 - Nu)",
+            titleSkills: "🔧 Kernekompetencer",
+            skills: ["✅ Fødevaresikkerhed", "⚙️ Teknisk snilde", "🤝 Teamwork", "🚀 Hurtig eksekvering", "💎 Stabilitet"],
+            titleLangs: "🌐 Sprog",
+            langs: [
+                { name: "Dansk: Begynder (A1)", flag: "dk" },
+                { name: "Engelsk: Intermediate (B1)", flag: "gb" },
+                { name: "Ukrainsk: Modersmål", flag: "ua" },
+                { name: "Russisk: Modersmål", flag: "ru" }
+            ],
+            titleContact: "✉️ Kontakt mig",
+            btnCall: "Ring op",
+            btnPdf: "Hent CV (PDF)",
+            fileUrl: "CV_Yevhenii_DA.pdf",
+            footer: "© 2026 Yevhenii Shablia. Baseret i Helsinge."
+        },
+        en: {
+            headerSub: "⚡ Energetic and Reliable Kitchen Assistant",
+            titleProfile: "👤 Professional Profile",
+            descProfile: "I am a responsible person with a strong work ethic and practical drive. My experience from U/NORD Training Center in Hillerød has taught me to work effectively under pressure, optimize workflows, and maintain the highest standards of food safety and hygiene. I am highly punctual, proactive, and thrive in a busy kitchen environment.",
+            titleAvail: "📅 Availability & Location",
+            labelTime: "⏰ Working Hours:",
+            valTime: "Ready for morning, day, and weekend shifts. Highly flexible.",
+            labelLoc: "📍 Location:",
+            valLoc: "Østergade 60B, 3200 Helsinge.",
+            labelTrans: "🚗 Transport:",
+            valTrans: "Driving license (Category B).",
+            titleExp: "💼 Work Experience",
+            jobTitle: "👨‍🍳 Kitchen Assistant & Dishwasher",
+            jobDate: "Nov 2025 – Present",
+            jobList: `<li>🥗 Precise preparation and plating of ingredients (cold/hot kitchen).</li>
+                      <li>🧼 Operation of industrial dishwashing equipment and flow optimization.</li>
+                      <li>✨ Strict compliance with HACCP principles for high hygiene.</li>
+                      <li>📦 Structured stock management and workstation organization.</li>`,
+            titleEdu: "🎓 Education",
+            edu1: "<strong>💻 Software Developer (Vocational)</strong> (2018 - 2022)",
+            edu3: "<strong>⚙️ Bachelor's Degree, Mechanical Engineering</strong> (2022 - 2025)",
+            edu2: "<strong>🛠️ Master's Degree, Mechanical Engineering</strong> (2025 - Present)",
+            titleSkills: "🔧 Core Competencies",
+            skills: ["✅ Food Safety", "⚙️ Technical skill", "🤝 Teamwork", "🚀 Fast execution", "💎 Stability"],
+            titleLangs: "🌐 Languages",
+            langs: [
+                { name: "Danish: Beginner (A1)", flag: "dk" },
+                { name: "English: Intermediate (B1)", flag: "gb" },
+                { name: "Ukrainian: Native", flag: "ua" },
+                { name: "Russian: Native", flag: "ru" }
+            ],
+            titleContact: "✉️ Contact Me",
+            btnCall: "Call me",
+            btnPdf: "Download CV (PDF)",
+            fileUrl: "CV_Yevhenii_EN.pdf",
+            footer: "© 2026 Yevhenii Shablia. Based in Helsinge, Denmark."
+        }
+    };
+
+    function setLanguage(lang) {
+        const content = document.getElementById('main-content');
+        document.getElementById('btn-da').classList.toggle('active', lang === 'da');
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+        content.classList.remove('fade-in');
+        content.classList.add('fade-out');
+
+        setTimeout(() => {
+            document.getElementById('header-sub').innerText = translations[lang].headerSub;
+            document.getElementById('title-profile').innerText = translations[lang].titleProfile;
+            document.getElementById('desc-profile').innerHTML = translations[lang].descProfile;
+            document.getElementById('title-avail').innerText = translations[lang].titleAvail;
+            document.getElementById('label-time').innerText = translations[lang].labelTime;
+            document.getElementById('val-time').innerText = translations[lang].valTime;
+            document.getElementById('label-loc').innerText = translations[lang].labelLoc;
+            document.getElementById('val-loc').innerHTML = translations[lang].valLoc;
+            document.getElementById('label-trans').innerText = translations[lang].labelTrans;
+            document.getElementById('val-trans').innerText = translations[lang].valTrans;
+            document.getElementById('title-exp').innerText = translations[lang].titleExp;
+            document.getElementById('job-title').innerText = translations[lang].jobTitle;
+            document.getElementById('job-date').innerText = translations[lang].jobDate;
+            document.getElementById('job-list').innerHTML = translations[lang].jobList;
+            document.getElementById('title-edu').innerText = translations[lang].titleEdu;
+            document.getElementById('edu-1').innerHTML = translations[lang].edu1;
+            document.getElementById('edu-3').innerHTML = translations[lang].edu3;
+            document.getElementById('edu-2').innerHTML = translations[lang].edu2;
+            document.getElementById('title-skills').innerText = translations[lang].titleSkills;
+            document.getElementById('title-langs').innerText = translations[lang].titleLangs;
+            document.getElementById('title-contact').innerText = translations[lang].titleContact;
+            document.getElementById('btn-call').innerText = translations[lang].btnCall;
+            document.getElementById('btn-pdf').innerText = translations[lang].btnPdf;
+            document.getElementById('download-link').href = translations[lang].fileUrl;
+            document.getElementById('footer-text').innerHTML = translations[lang].footer;
+
+            const skillsContainer = document.getElementById('skills-list');
+            skillsContainer.innerHTML = '';
+            translations[lang].skills.forEach(skill => {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.innerText = skill;
+                skillsContainer.appendChild(span);
+            });
+
+            const langsContainer = document.getElementById('langs-list');
+            langsContainer.innerHTML = '';
+            translations[lang].langs.forEach(l => {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.innerHTML = `<img src="https://flagcdn.com/w40/${l.flag}.png" class="flag-icon" alt="${l.flag}"> ${l.name}`;
+                langsContainer.appendChild(span);
+            });
+
+            content.classList.remove('fade-out');
+            content.classList.add('fade-in');
+        }, 400);
+    }
+
+    window.onload = () => setLanguage('da');
+</script>
+
+</body>
+</html>
